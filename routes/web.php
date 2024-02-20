@@ -50,3 +50,9 @@ Route::get('/fruit/{id}', function ($id) {
         'fruit' => FruitList::find($id)
     ]);
 });
+
+//cart
+
+Route::get('/cart', function () {
+    return view('cart');
+});
