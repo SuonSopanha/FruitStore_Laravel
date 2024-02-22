@@ -28,7 +28,7 @@
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <img src="{{ $fruit['url'] }}" alt="{{ $fruit['name'] }}" class="w-full h-fit object-cover mb-4 rounded-md">
                 <h2 class="text-xl font-bold text-gray-800 mb-2">{{ $fruit['name'] }}</h2>
-                <p class="text-gray-700 mb-2">{{ $fruit['description'] }}</p>
+                <p class="text-gray-700 mb-2">{{ $fruit['descriptions'] }}</p>
                 <p class="text-gray-500 text-sm">{{ $fruit['price'] }} per KG</p>
                 <p class="text-gray-500 text-sm">From: {{ $fruit['origin'] }}</p>
                 <!-- You can add more details here -->

@@ -35,9 +35,9 @@
             @unless(count($fruitList) == 0)
                 @foreach ($fruitList as $fruit)
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <img src="{{$fruit['url']}}" alt="Apples" class="w-full h-32 object-cover mb-4 rounded-md">
+                        <img src="{{$fruit['url']}}" alt="Apples" class="w-full h-48 object-cover mb-4 rounded-md">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">{{$fruit['name']}}</h2>
-                        <p class="text-gray-700 mb-2">{{$fruit['description']}}</p>
+                        <p class="text-gray-700 mb-2">{{$fruit['descriptions']}}</p>
                         <p class="text-gray-500 text-sm">{{$fruit['price']}} per KG</p>
                         <p class="text-gray-500 text-sm">From : {{$fruit['origin']}}</p>
                         <a href="/fruit/{{ $fruit['id'] }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-4 inline-flex items-center">

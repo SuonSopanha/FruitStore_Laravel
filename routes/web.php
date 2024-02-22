@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Fruit;
+use App\Models\FruitList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\FruitList;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,7 @@ use App\Models\FruitList;
 //All listing
 Route::get('/', function () {
     return view('homepage', [
-        'fruitList' => FruitList::all()
+        'fruitList' => Fruit::all()
     ]);
 });
 
@@ -47,7 +48,7 @@ Route::get('/', function () {
 //Single listing
 Route::get('/fruit/{id}', function ($id) {
     return view('fruit', [
-        'fruit' => FruitList::find($id)
+        'fruit' => Fruit::find($id)
     ]);
 });
 
