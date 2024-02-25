@@ -47,10 +47,23 @@ Route::get('/', function () {
 
 //Single listing
 Route::get('/fruit/{id}', function ($id) {
-    return view('fruit', [
-        'fruit' => Fruit::find($id)
-    ]);
+    $fruitList = Fruit::find($id);
+
+    if(!$fruitList){
+        abort(404);
+    }else{
+        return view('fruit', [
+            'fruit' => $fruitList
+        ]);
+    }
 });
+
+//Alternative version of single listing
+// Route::get('/fruit/{fruit}', function(Fruit $fruit) {
+//     return view('fruit', [
+//         'fruit' => $fruit
+//     ]);
+// });
 
 //cart
 
