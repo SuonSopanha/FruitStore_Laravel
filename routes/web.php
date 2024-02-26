@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FruitController;
 use App\Models\Fruit;
 use App\Models\FruitList;
 use Illuminate\Http\Request;
@@ -38,25 +39,11 @@ use Illuminate\Support\Facades\Route;
 
 
 //All listing
-Route::get('/', function () {
-    return view('homepage', [
-        'fruitList' => Fruit::all()
-    ]);
-});
+Route::get('/', [FruitController::class, 'index']);
 
 
 //Single listing
-Route::get('/fruit/{id}', function ($id) {
-    $fruitList = Fruit::find($id);
-
-    if(!$fruitList){
-        abort(404);
-    }else{
-        return view('fruit', [
-            'fruit' => $fruitList
-        ]);
-    }
-});
+Route::get('/fruit/{id}', [FruitController::class, 'show']);
 
 //Alternative version of single listing
 // Route::get('/fruit/{fruit}', function(Fruit $fruit) {
