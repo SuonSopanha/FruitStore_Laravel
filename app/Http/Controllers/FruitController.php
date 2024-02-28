@@ -15,7 +15,6 @@ class FruitController extends Controller
 
     public function show($id){
         $fruitList = Fruit::find($id);
-
         if(!$fruitList){
             abort(404);
         }else{
@@ -23,5 +22,10 @@ class FruitController extends Controller
                 'fruit' => $fruitList
             ]);
         }
+    }
+
+    public function cart(){
+        $fruits = Fruit::all();
+        return view('cart', ['fruit' => $fruits]);
     }
 }

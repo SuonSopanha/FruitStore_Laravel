@@ -54,6 +54,4 @@ Route::get('/fruit/{id}', [FruitController::class, 'show']);
 
 //cart
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart', [FruitController::class, 'cart']);

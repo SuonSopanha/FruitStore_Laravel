@@ -18,23 +18,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($fruit as $fruit)
                             <tr>
                                 <td class="py-4">
                                     <div class="flex items-center">
-                                        <img class="h-16 w-16 mr-4" src="https://cdn.pixabay.com/photo/2017/09/26/13/21/apples-2788599_1280.jpg" alt="Product image">
-                                        <span class="font-semibold">Product name</span>
+                                        <img class="h-16 w-16 mr-4" src="{{ $fruit->url }}" alt="Product image">
+                                        <span class="font-semibold">{{ $fruit->name }}</span>
                                     </div>
                                 </td>
-                                <td class="py-4">$19.99</td>
+                                <td class="py-4">{{ $fruit->price }}</td>
                                 <td class="py-4">
                                     <div class="flex items-center">
-                                        <button class="border rounded-md py-2 px-4 mr-2">-</button>
+                                        <button class="border rounded-md py-2 px-4 mr-2" onclick="decrementQuantity({{ $fruit->id }})">-</button>
                                         <span class="text-center w-8">1</span>
-                                        <button class="border rounded-md py-2 px-4 ml-2">+</button>
+                                        <button class="border rounded-md py-2 px-4 ml-2" onclick="incrementQuantity({{ $fruit->id }})">+</button>
                                     </div>
                                 </td>
-                                <td class="py-4">$19.99</td>
+                                <td class="py-4">$19.99</td> <!-- You may need to replace this with dynamic calculation -->
                             </tr>
+                            @endforeach
                             <!-- More product rows -->
                         </tbody>
                     </table>
@@ -66,5 +68,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection
